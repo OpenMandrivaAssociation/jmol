@@ -7,7 +7,7 @@ Group:		Sciences/Chemistry
 License:	LGPL
 Summary:	Jmol: an open-source Java viewer for chemical structures in 3D
 Version:	%{version}
-Release:	%mkrel 1
+Release:	%mkrel 2
 Source:		http://downloads.sourceforge.net/jmol/%{name}-%{version}-full.tar.gz
 URL:		http://www.jmol.org/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -26,7 +26,7 @@ with features for chemicals, crystals, materials and biomolecules.
 
 %install
 mkdir -p %{buildroot}%{_datadir}/%{name}
-cp -fa `ls *.jar | grep -v Signed` %{buildroot}%{_datadir}/%{name}
+cp -fa *.jar %{buildroot}%{_datadir}/%{name}
 cp -far jars appletweb plugin-jars %{buildroot}%{_datadir}/%{name}
 cp -fa jmol %{buildroot}%{_datadir}/%{name}
 
