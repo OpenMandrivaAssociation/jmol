@@ -1,5 +1,5 @@
 %define name	jmol
-%define version	12.0.19
+%define version	12.0.22
 %define jmoldir	%{_datadir}/%{name}
 
 Name:		%{name}
@@ -43,15 +43,15 @@ while [ \`echo \$1 | egrep '^-D|^-m' | wc -l\` != 0 ]; do
         shift
 done
 
-if [ -f \$JMOL_HOME/Jmol.jar ] ; then
-  jarpath=\$JMOL_HOME/Jmol.jar
-elif [ -f %{jmoldir}/Jmol.jar ] ; then
-  jarpath=%{jmoldir}/Jmol.jar
-else
-  echo Jmol.jar not found
-  exit
+if [ x"\$JMOL_HOME" = x ]; then
+	JMOL_HOME=%{jmoldir}
 fi
-\$command -Xmx512m -jar \$jarpath \$@
+jarpath=\$JMOL_HOME/Jmol.jar
+if [ ! -f \$jarpath ] ; then
+	echo Jmol.jar not found
+	exit
+fi
+\$command -Xmx512m -Djmol.home="\$JMOL_HOME" -jar \$jarpath "\$@"
 EOF
 chmod +x %{buildroot}%{_bindir}/%{name}
 
