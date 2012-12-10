@@ -68,3 +68,41 @@ rm -rf %{buildroot}
 %{_datadir}/%{name}/*
 %dir %doc %{_docdir}/%{name}
 %doc %{_docdir}/%{name}/*
+
+
+%changelog
+* Mon Nov 22 2010 Paulo Andrade <pcpa@mandriva.com.br> 12.0.22-1mdv2011.0
++ Revision: 599831
+- Update to latest upstream release
+
+* Tue Oct 26 2010 Paulo Andrade <pcpa@mandriva.com.br> 12.0.19-1mdv2011.0
++ Revision: 589398
+- Update to latest upstream release
+
+* Wed Dec 30 2009 Frederik Himpe <fhimpe@mandriva.org> 11.8.15-1mdv2010.1
++ Revision: 483989
+- Update to new version 11.8.15
+
+* Mon Oct 26 2009 Paulo Andrade <pcpa@mandriva.com.br> 11.8.6-2mdv2010.0
++ Revision: 459441
+- Install "signed" jar files.
+
+* Fri Sep 25 2009 Paulo Andrade <pcpa@mandriva.com.br> 11.8.6-1mdv2010.0
++ Revision: 448539
+- update to latest upstream release version 11.8.6.
+
+* Sat May 23 2009 Frederik Himpe <fhimpe@mandriva.org> 11.6.23-1mdv2010.0
++ Revision: 379060
+- Update to new version 11.6.23
+
+* Sat May 09 2009 Paulo Andrade <pcpa@mandriva.com.br> 11.6.19-2mdv2010.0
++ Revision: 373566
++ rebuild (emptylog)
+
+* Wed Mar 25 2009 Paulo Andrade <pcpa@mandriva.com.br> 11.6.19-1mdv2009.1
++ Revision: 361185
+- Initial import of jmol version 11.6.19.
+  Jmol: an open-source Java viewer for chemical structures in 3D
+  http://www.jmol.org/
+- jmol
+
