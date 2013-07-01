@@ -5,7 +5,7 @@
 Name:		%{name}
 Group:		Sciences/Chemistry
 License:	LGPL
-Summary:	Jmol: an open-source Java viewer for chemical structures in 3D
+Summary:	: an open-source Java viewer for chemical structures in 3D
 Version:	%{version}
 Release:	%mkrel 1
 Source:		http://downloads.sourceforge.net/jmol/Jmol-%{version}-full.tar.gz
