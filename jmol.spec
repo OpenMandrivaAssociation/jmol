@@ -1,4 +1,5 @@
 %define jmoldir	%{_datadir}/%{name}
+%define debug_package %{nil}
 
 Name:		jmol
 Group:		Sciences/Chemistry
