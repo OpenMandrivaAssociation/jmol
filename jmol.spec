@@ -1,16 +1,13 @@
-%define name	jmol
-%define version	12.0.22
 %define jmoldir	%{_datadir}/%{name}
 
-Name:		%{name}
+Name:		jmol
 Group:		Sciences/Chemistry
 License:	LGPL
-Summary:	: an open-source Java viewer for chemical structures in 3D
-Version:	%{version}
-Release:	%mkrel 1
+Summary:	An open-source Java viewer for chemical structures in 3D
+Version:	12.0.22
+Release:	2
 Source:		http://downloads.sourceforge.net/jmol/Jmol-%{version}-full.tar.gz
 URL:		http://www.jmol.org/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 Requires:	java > 1.5
 BuildRequires:	java-rpmbuild
@@ -38,7 +35,7 @@ cat > %{buildroot}%{_bindir}/%{name} << EOF
 
 # Collect -D & -m options as java arguments
 command=java
-while [ \`echo \$1 | egrep '^-D|^-m' | wc -l\` != 0 ]; do
+while [ \`echo \$1 | grep -E '^-D|^-m' | wc -l\` != 0 ]; do
         command="\$command \$1"
         shift
 done
@@ -59,10 +56,8 @@ mkdir -p %{buildroot}%{_docdir}/%{name}
 cp -far doc/* %{buildroot}%{_docdir}/%{name}
 
 %clean
-rm -rf %{buildroot}
 
 %files
-%defattr(-,root,root)
 %{_bindir}/%{name}
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/*
