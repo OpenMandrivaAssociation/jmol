@@ -6,7 +6,7 @@ Group:		Sciences/Chemistry
 License:	LGPL
 Summary:	An open-source Java viewer for chemical structures in 3D
 Version:	13.2.7
-Release:	1
+Release:	2
 Source:		http://downloads.sourceforge.net/jmol/Jmol-%{version}-full.tar.gz
 URL:		http://www.jmol.org/
 
@@ -23,10 +23,10 @@ with features for chemicals, crystals, materials and biomolecules.
 %build
 
 %install
-mkdir -p %{buildroot}%{_datadir}/%{name}
-cp -fa *.jar %{buildroot}%{_datadir}/%{name}
-cp -far jars appletweb plugin-jars %{buildroot}%{_datadir}/%{name}
-cp -fa jmol %{buildroot}%{_datadir}/%{name}
+mkdir -p %{buildroot}%{_javadir} %{buildroot}%{jmoldir}
+cp -fa *.jar %{buildroot}%{_javadir}
+cp -far jars appletweb plugin-jars %{buildroot}%{jmoldir}
+cp -fa jmol %{buildroot}%{jmoldir}
 
 mkdir -p %{buildroot}%{_bindir}
 # This is basically a cut&paste of the bundled script, removing
@@ -42,10 +42,10 @@ while [ \`echo \$1 | grep -E '^-D|^-m' | wc -l\` != 0 ]; do
 done
 
 if [ x"\$JMOL_HOME" = x ]; then
-	JMOL_HOME=%{jmoldir}
+	JMOL_HOME=%{_javadir}
 fi
-jarpath=\$JMOL_HOME/Jmol.jar
-if [ ! -f \$jarpath ] ; then
+jarpath=%{_javadir}/Jmol.jar
+if [ ! -f \$jarpath ]; then
 	echo Jmol.jar not found
 	exit
 fi
@@ -58,5 +58,6 @@ cp -far doc/* %{buildroot}%{_docdir}/%{name}
 
 %files
 %{_bindir}/%{name}
-%{_datadir}/%{name}
+%{_javadir}/*.jar
+%{jmoldir}
 %doc %{_docdir}/%{name}
