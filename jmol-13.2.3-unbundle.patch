@@ -1,0 +1,27 @@
+diff -up jmol-13.2.3/build.xml.unbundle jmol-13.2.3/build.xml
+--- jmol-13.2.3/build.xml.unbundle	2013-08-10 20:38:15.427036218 +0300
++++ jmol-13.2.3/build.xml	2013-08-10 20:39:20.082306100 +0300
+@@ -82,6 +82,8 @@
+   <path id="project.class.path">
+     <fileset dir="${lib.dir}">
+       <include name="*.jar" />
++      <include name="${vecmath.jar}" />
++      <include name="${itext.jar}" />
+     </fileset>
+   </path>
+   
+@@ -403,13 +405,7 @@ all support for previous versions remove
+   <target name="libjars" id="libjars" depends="check.libjars" unless="libjars.uptodate">
+     <delete file="build/libjars.timestamp"/>
+     <mkdir dir="${appjars.dir}"/>
+-    <!-- unjar dest="${appjars.dir}" src="${lib.dir}/${vecmath.jar}"/ -->
+-    <unjar dest="${appjars.dir}" src="${lib.dir}/${naga.jar}"/>
+-    <!-- unjar dest="${appjars.dir}" src="${lib.dir}/Acme.jar"/ -->
+-    <unjar dest="${appjars.dir}" src="${lib.dir}/${itext.jar}"/>
+-    <unjar dest="${appjars.dir}" src="${lib.dir}/${commons-cli.jar}"/>
+-    <unjar dest="${appjars.dir}" src="${lib.dir}/jspecview.applet.jar"/>
+-  	<delete dir="${appjars.dir}/org/jmol" />
++   	<delete dir="${appjars.dir}/org/jmol" />
+     <touch file="build/libjars.timestamp"/>
+   </target>
+ 

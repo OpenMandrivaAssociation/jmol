@@ -1,0 +1,38 @@
+diff -up jmol-13.2.3/build.xml.nosign jmol-13.2.3/build.xml
+--- jmol-13.2.3/build.xml.nosign	2013-08-10 20:39:52.239445678 +0300
++++ jmol-13.2.3/build.xml	2013-08-10 20:41:05.407487719 +0300
+@@ -442,13 +442,14 @@ all support for previous versions remove
+       <fileset dir="${appjars.dir}" includes="**/*"/>
+       <fileset dir="src/org/jmol/translation/Jmol" includes="Messages*.class"/>
+     </jar>
+-    <signjar jar="${jmol.build.dir}/JmolUnsigned.jar"
++    
++    <!--<signjar jar="${jmol.build.dir}/JmolUnsigned.jar"
+              signedjar="${jmol.build.dir}/Jmol.jar"
+              keystore="selfSignedCertificate/selfSignedCertificate.store"
+-             storepass="selfSignedCertificate" alias="selfSignedCertificate" />
++             storepass="selfSignedCertificate" alias="selfSignedCertificate" />-->
+     <!-- to verify that a .jar file is signed: jarsigner -verify foo.jar -->
+   	
+-    <delete file="${jmol.build.dir}/JmolUnsigned.jar"/>
++    <!--    <delete file="${jmol.build.dir}/JmolUnsigned.jar"/> -->
+     <jar destfile="${jmol.build.dir}/JmolUnsignedF.jar"
+          manifest="manifest/applicationData.txt">
+       <fileset dir="${classes.dir}" >
+@@ -474,13 +475,13 @@ all support for previous versions remove
+       <fileset dir="${appjars.dir}" includes="**/cli/** **/naga/**" />
+       <fileset dir="src/org/jmol/translation/Jmol" includes="Messages*.class"/>
+     </jar>
+-    <signjar jar="${jmol.build.dir}/JmolUnsignedF.jar"
++    <!--<signjar jar="${jmol.build.dir}/JmolUnsignedF.jar"
+              signedjar="${jmol.build.dir}/JmolData.jar"
+              keystore="selfSignedCertificate/selfSignedCertificate.store"
+-             storepass="selfSignedCertificate" alias="selfSignedCertificate" />
++             storepass="selfSignedCertificate" alias="selfSignedCertificate" />-->
+     <!-- to verify that a .jar file is signed: jarsigner -verify foo.jar -->
+ 
+-  	<delete file="${jmol.build.dir}/JmolUnsignedF.jar"/>
++    <!--<delete file="${jmol.build.dir}/JmolUnsignedF.jar"/>-->
+     <copy todir="${jmol.build.dir}">
+       <fileset dir=".">
+         <include name="jmol" />

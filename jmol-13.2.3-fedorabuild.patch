@@ -1,0 +1,44 @@
+diff -up jmol-13.2.3/build.xml.fedorabuild jmol-13.2.3/build.xml
+--- jmol-13.2.3/build.xml.fedorabuild	2013-07-29 07:57:17.000000000 +0300
++++ jmol-13.2.3/build.xml	2013-08-10 20:37:41.715938271 +0300
+@@ -48,7 +48,7 @@
+   <property name="jvxl_version" value="0.1" />
+ 
+   <property name="tests.source.dir" value="source-tests" />
+-  <property name="lib.dir" value="jars" />
++  <property name="lib.dir" value="/usr/share/java" />
+   <property name="plugin.dir" value="plugin-jars" />
+   <property name="appjars.dir" value="build/appjars" />
+   <property name="classes.dir" value="build/classes" />
+@@ -63,10 +63,9 @@
+   <property name="jmol.build.dir" value="build" />
+   <property name="docbook-xsl" value="docbook-xsl-1.76.1" />
+   <property name="docbook-xml" value="docbook-xml-4.4" />
+-  <!--property name="vecmath.jar" value="vecmath1.2-1.14.jar" / -->
+-  <property name="naga.jar" value="naga-3_0.jar" />
+-  <property name="itext.jar" value="itext-1.4.5.jar" />
+-  <property name="commons-cli.jar" value="commons-cli-1.0.jar" />
++  <property name="naga.jar" value="naga.jar" />
++  <property name="itext.jar" value="itext.jar" />
++  <property name="commons-cli.jar" value="commons-cli.jar" />
+   <property name="saxon.jar" value="saxon.jar" />
+   <property name="saxon.main" value="com.icl.saxon.StyleSheet" />
+ 
+@@ -376,7 +375,7 @@ all support for previous versions remove
+           <!-- srcfiles dir="${lib.dir}" includes="Acme.jar"/ -->
+           <srcfiles dir="${lib.dir}" includes="${itext.jar}"/>
+           <srcfiles dir="${lib.dir}" includes="${commons-cli.jar}"/>
+-          <srcfiles dir="${lib.dir}" includes="JSpecView.jar"/>
++          <srcfiles dir="${lib.dir}" includes="jspecview.applet.jar"/>
+         </uptodate>
+         <uptodate targetfile="build/libjars.timestamp"
+                   srcfile="${appjars.dir}"/>
+@@ -409,7 +408,7 @@ all support for previous versions remove
+     <!-- unjar dest="${appjars.dir}" src="${lib.dir}/Acme.jar"/ -->
+     <unjar dest="${appjars.dir}" src="${lib.dir}/${itext.jar}"/>
+     <unjar dest="${appjars.dir}" src="${lib.dir}/${commons-cli.jar}"/>
+-    <unjar dest="${appjars.dir}" src="${lib.dir}/JSpecView.jar"/>
++    <unjar dest="${appjars.dir}" src="${lib.dir}/jspecview.applet.jar"/>
+   	<delete dir="${appjars.dir}/org/jmol" />
+     <touch file="build/libjars.timestamp"/>
+   </target>

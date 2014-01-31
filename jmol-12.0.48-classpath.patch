@@ -1,0 +1,11 @@
+diff -up jmol-12.0.48/build.xml.orig jmol-12.0.48/build.xml
+--- jmol-12.0.48/build.xml.orig	2011-08-24 21:40:02.408352753 +0300
++++ jmol-12.0.48/build.xml	2011-08-24 21:44:14.895787429 +0300
+@@ -14,7 +14,6 @@
+   <!-- pull developer-specific settings from their home directory -->
+   <property file="${user.home}/.jmol.build.properties" />
+   <!-- compile options -->
+-  <property name="build.sysclasspath" value="ignore" />
+   <property name="build.compiler" value="javac1.5" />
+   <!-- for some reason, I can't get ant to use this ${java.version}
+        property as the value of the source parameter -->
