@@ -8,7 +8,7 @@ Name:        jmol
 Version:     13.2.4
 Release:     1.0%{?dist}
 Summary:     An open-source Java viewer for chemical structures in 3D
-
+Group:       Sciences/Chemistry
 # most is LGPLv2+, src/com/obrador is combination of IJG and BSD
 # src/org@/jmol/export/image is partially 2 clause BSD
 License:     LGPLv2+ and IJG and BSD
