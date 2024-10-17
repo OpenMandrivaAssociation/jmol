@@ -12,7 +12,7 @@ Group:       Sciences/Chemistry
 # most is LGPLv2+, src/com/obrador is combination of IJG and BSD
 # src/org@/jmol/export/image is partially 2 clause BSD
 License:     LGPLv2+ and IJG and BSD
-URL:         http://jmol.sourceforge.net
+URL:         https://jmol.sourceforge.net
 BuildArch:   noarch
 Source0:     http://downloads.sourceforge.net/%{name}/Jmol-%{version}-full.tar.gz
 # Image available at "http://wiki.jmol.org:81/index.php/Image:Jmol_icon_128.png"
